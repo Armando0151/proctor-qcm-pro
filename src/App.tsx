@@ -15,6 +15,12 @@ import OffresCandidat from "./pages/candidat/OffresCandidat";
 import PasserTest from "./pages/candidat/PasserTest";
 import ResultatsCandidat from "./pages/candidat/ResultatsCandidat";
 import NotFound from "./pages/NotFound";
+import DetailOffre from "./pages/candidat/DetailOffre";
+import PostulerOffre from "./pages/candidat/PostulerOffre";
+import EditOffre from "./pages/recruteur/EditOffre";
+import CandidatsOffre from "./pages/recruteur/CandidatsOffre";
+import Profil from "./pages/shared/Profil";
+import Parametres from "./pages/shared/Parametres";
 
 const queryClient = new QueryClient();
 
@@ -33,13 +39,21 @@ const App = () => (
           <Route path="/recruteur/dashboard" element={<DashboardRecruteur />} />
           <Route path="/recruteur/creer-offre" element={<CreerOffre />} />
           <Route path="/recruteur/offres" element={<ListeOffres />} />
+          <Route path="/recruteur/offres/:id/edit" element={<EditOffre />} />
+          <Route path="/recruteur/offres/:id/candidats" element={<CandidatsOffre />} />
           <Route path="/recruteur/resultats" element={<Resultats />} />
           
           {/* Routes Candidat */}
           <Route path="/candidat/dashboard" element={<DashboardCandidat />} />
           <Route path="/candidat/offres" element={<OffresCandidat />} />
+          <Route path="/candidat/offres/:id" element={<DetailOffre />} />
+          <Route path="/candidat/postuler/:id" element={<PostulerOffre />} />
           <Route path="/candidat/test/:offreId" element={<PasserTest />} />
           <Route path="/candidat/resultats" element={<ResultatsCandidat />} />
+          
+          {/* Routes partagées */}
+          <Route path="/profil" element={<Profil />} />
+          <Route path="/parametres" element={<Parametres />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
