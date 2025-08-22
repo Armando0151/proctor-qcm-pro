@@ -93,11 +93,8 @@ const DetailOffre = () => {
   }, [id]);
 
   const handlePostuler = () => {
-    if (offre?.hasTest && offre.testStatus === 'not_started') {
-      navigate(`/candidat/test/${offre.id}`);
-    } else {
-      navigate(`/candidat/postuler/${offre.id}`);
-    }
+    // Toujours rediriger vers la page de consentement RGPD d'abord
+    navigate(`/consentement/${offre?.id}`);
   };
 
   const formatDate = (dateString: string) => {

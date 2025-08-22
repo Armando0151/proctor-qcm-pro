@@ -214,17 +214,23 @@ const DashboardCandidat = () => {
                         </div>
                         
                         <div className="flex space-x-2">
-                          <Button variant="outline" size="sm">
-                            Voir détails
+                          <Button variant="outline" size="sm" asChild>
+                            <Link to={`/candidat/offres/${job.id}`}>
+                              Voir détails
+                            </Link>
                           </Button>
                           {job.hasTest && job.testStatus === 'not_started' ? (
-                            <Button size="sm">
-                              <Play className="mr-1 h-3 w-3" />
-                              Passer le test
+                            <Button size="sm" asChild>
+                              <Link to={`/consentement/${job.id}`}>
+                                <Play className="mr-1 h-3 w-3" />
+                                Passer le test
+                              </Link>
                             </Button>
                           ) : (
-                            <Button size="sm">
-                              Postuler
+                            <Button size="sm" asChild>
+                              <Link to={`/consentement/${job.id}`}>
+                                Postuler
+                              </Link>
                             </Button>
                           )}
                         </div>

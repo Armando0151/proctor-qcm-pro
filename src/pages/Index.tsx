@@ -228,9 +228,9 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Légal</h3>
               <ul className="space-y-2 text-primary-foreground/80">
-                <li>Confidentialité</li>
-                <li>CGU</li>
-                <li>RGPD</li>
+                <li><Link to="/rgpd" className="hover:text-white transition-colors">Confidentialité</Link></li>
+                <li><Link to="/cgu" className="hover:text-white transition-colors">CGU</Link></li>
+                <li><Link to="/rgpd" className="hover:text-white transition-colors">RGPD</Link></li>
                 <li>Cookies</li>
               </ul>
             </div>

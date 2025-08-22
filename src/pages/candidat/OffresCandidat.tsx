@@ -294,21 +294,21 @@ const OffresCandidat = () => {
                                 Voir l'offre complète
                               </Button>
                             </Link>
-                            {offre.hasTest && offre.testStatus === 'not_started' ? (
-                              <Link to={`/candidat/test/${offre.id}`} className="w-full">
-                                <Button variant="outline" className="w-full">
-                                  <PlayCircle className="mr-2 h-4 w-4" />
-                                  Passer le test d'abord
-                                </Button>
-                              </Link>
-                            ) : (
-                              <Link to={`/candidat/postuler/${offre.id}`} className="w-full">
-                                <Button variant="success" className="w-full">
-                                  <Users className="mr-2 h-4 w-4" />
-                                  Postuler maintenant
-                                </Button>
-                              </Link>
-                            )}
+                            <Link to={`/consentement/${offre.id}`} className="w-full">
+                              <Button variant="success" className="w-full">
+                                {offre.hasTest ? (
+                                  <>
+                                    <PlayCircle className="mr-2 h-4 w-4" />
+                                    Passer le test
+                                  </>
+                                ) : (
+                                  <>
+                                    <Users className="mr-2 h-4 w-4" />
+                                    Postuler maintenant
+                                  </>
+                                )}
+                              </Button>
+                            </Link>
                           </>
                         ) : (
                           <div className="text-center w-full">

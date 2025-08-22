@@ -21,6 +21,9 @@ import EditOffre from "./pages/recruteur/EditOffre";
 import CandidatsOffre from "./pages/recruteur/CandidatsOffre";
 import Profil from "./pages/shared/Profil";
 import Parametres from "./pages/shared/Parametres";
+import ConsentementRGPD from "./pages/public/ConsentementRGPD";
+import RGPD from "./pages/public/RGPD";
+import CGU from "./pages/public/CGU";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +53,11 @@ const App = () => (
           <Route path="/candidat/postuler/:id" element={<PostulerOffre />} />
           <Route path="/candidat/test/:offreId" element={<PasserTest />} />
           <Route path="/candidat/resultats" element={<ResultatsCandidat />} />
+          
+          {/* Routes publiques */}
+          <Route path="/consentement/:offreId" element={<ConsentementRGPD />} />
+          <Route path="/rgpd" element={<RGPD />} />
+          <Route path="/cgu" element={<CGU />} />
           
           {/* Routes partagées */}
           <Route path="/profil" element={<Profil />} />

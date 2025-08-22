@@ -157,11 +157,11 @@ export function Navbar({ user, onLogout }: NavbarProps) {
                     </p>
                   </div>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/profil')}>
                     <User className="mr-2 h-4 w-4" />
                     <span>Profil</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/parametres')}>
                     <Settings className="mr-2 h-4 w-4" />
                     <span>Paramètres</span>
                   </DropdownMenuItem>
