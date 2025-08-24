@@ -71,6 +71,11 @@ export function Navbar({ user, onLogout }: NavbarProps) {
           path: '/recruteur/resultats', 
           icon: ClipboardList 
         },
+        { 
+          name: 'Candidatures', 
+          path: '/recruteur/gestion-candidatures', 
+          icon: Users 
+        },
       ];
     } else {
       return [
@@ -88,6 +93,11 @@ export function Navbar({ user, onLogout }: NavbarProps) {
           name: 'Mes Résultats', 
           path: '/candidat/resultats', 
           icon: ClipboardList 
+        },
+        { 
+          name: 'Mes Candidatures', 
+          path: '/candidat/suivi-candidatures', 
+          icon: Users 
         },
       ];
     }

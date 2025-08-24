@@ -24,6 +24,10 @@ import Parametres from "./pages/shared/Parametres";
 import ConsentementRGPD from "./pages/public/ConsentementRGPD";
 import RGPD from "./pages/public/RGPD";
 import CGU from "./pages/public/CGU";
+import GestionCandidatures from "./pages/recruteur/GestionCandidatures";
+import DetailCandidature from "./pages/recruteur/DetailCandidature";
+import SuiviCandidatures from "./pages/candidat/SuiviCandidatures";
+import FAQ from "./pages/shared/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +49,8 @@ const App = () => (
           <Route path="/recruteur/offres/:id/edit" element={<EditOffre />} />
           <Route path="/recruteur/offres/:id/candidats" element={<CandidatsOffre />} />
           <Route path="/recruteur/resultats" element={<Resultats />} />
+          <Route path="/recruteur/gestion-candidatures" element={<GestionCandidatures />} />
+          <Route path="/recruteur/candidatures/:id" element={<DetailCandidature />} />
           
           {/* Routes Candidat */}
           <Route path="/candidat/dashboard" element={<DashboardCandidat />} />
@@ -53,6 +59,7 @@ const App = () => (
           <Route path="/candidat/postuler/:id" element={<PostulerOffre />} />
           <Route path="/candidat/test/:offreId" element={<PasserTest />} />
           <Route path="/candidat/resultats" element={<ResultatsCandidat />} />
+          <Route path="/candidat/suivi-candidatures" element={<SuiviCandidatures />} />
           
           {/* Routes publiques */}
           <Route path="/consentement/:offreId" element={<ConsentementRGPD />} />
@@ -62,6 +69,7 @@ const App = () => (
           {/* Routes partagées */}
           <Route path="/profil" element={<Profil />} />
           <Route path="/parametres" element={<Parametres />} />
+          <Route path="/faq" element={<FAQ />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
